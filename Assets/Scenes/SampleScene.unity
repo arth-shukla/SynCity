@@ -1107,7 +1107,7 @@ GameObject:
   - component: {fileID: 932268813}
   - component: {fileID: 932268814}
   m_Layer: 5
-  m_Name: Prompt Logic Manager
+  m_Name: Choice Logic Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1508,9 +1508,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf20684cfc1324992a3f8e4d36ac696c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choiceControllerObj: {fileID: 932268812}
-  regularTextControllerObj: {fileID: 1130133384}
-  spriteLogicObj: {fileID: 2008287803}
+  choiceObj: {fileID: 932268812}
+  regObj: {fileID: 1130133384}
+  spriteObj: {fileID: 2008287803}
 --- !u!1 &1375656923
 GameObject:
   m_ObjectHideFlags: 0
