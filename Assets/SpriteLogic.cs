@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class SpriteLogicScript : MonoBehaviour
+
+public class SpriteLogic : MonoBehaviour
 {
 
     // sky tracking

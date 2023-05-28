@@ -19,13 +19,16 @@ public class RegularTextController : MonoBehaviour
         next.SetActive(true);
         Button nextButton = next.GetComponent<Button>();
         nextButton.onClick.AddListener(nextCallback);
-        choice.GetComponentInChildren<TextMeshProUGUI>().text = "Continue";
+        next.GetComponentInChildren<TextMeshProUGUI>().text = "Continue";
     }
 
     // hide all elements
     public void DestroyChoices()
     {
         dialogue.SetActive(false);
-        next.SetActive(false)
+        next.SetActive(false);
+
+        Button nextButton = next.GetComponent<Button>();
+        nextButton.onClick.RemoveAllListeners();
     }
 }
