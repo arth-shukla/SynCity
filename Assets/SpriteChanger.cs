@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpriteChangingScript : MonoBehaviour
+public class SpriteChanger : MonoBehaviour
 {
 
     SpriteRenderer rend;
@@ -30,6 +30,12 @@ public class SpriteChangingScript : MonoBehaviour
         if (spriteNum >= spriteArray.Length)
         {
             Debug.Log("spriteArray has max length " + spriteArray.Length + "; tried " + spriteNum);
+            return;
+        }
+
+        if (spriteNum < 0)
+        {
+            Debug.Log("spriteNum " + spriteNum + " illegal");
             return;
         }
 
