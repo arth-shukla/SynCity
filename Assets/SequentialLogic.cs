@@ -26,6 +26,100 @@ public class GameController
     }
 }
 
+class TestDescision2
+{
+    GameController c;
+    UnityAction NextChoice1;
+    UnityAction NextChoice2;
+    UnityAction NextChoice3;
+    public TestDescision2(
+        GameController c, UnityAction NextChoice1, UnityAction NextChoice2, UnityAction NextChoice3 = null
+    )
+    {
+        this.c = c;
+        this.NextChoice1 = NextChoice1;
+        this.NextChoice2 = NextChoice2;
+        this.NextChoice3 = NextChoice3;
+    }
+
+    void Choice1()
+    {
+        c.DestroyAllPrompts();
+
+        c.sprite.IncrAirPol();
+        // decrement algae
+        // etc
+
+        c.sprite.UpdateSky();
+        // all other updates
+
+        NextChoice1();
+    }
+
+    void Choice2()
+    {
+        c.DestroyAllPrompts();
+
+        c.sprite.DecrAirPol();
+        // increment algae
+        // etc
+
+        c.sprite.UpdateSky();
+        // all other updates
+
+        NextChoice2();
+    }
+
+    string GetPrompt()
+    { return "Decision 2 prompy"; }
+
+    string[] GetChoiceStrs()
+    { return new string[] { "Bad Air Choice", "Good Air Choice" }; }
+
+    UnityAction[] GetActions()
+    { return new UnityAction[] { Choice1, Choice2 }; }
+
+    public void InitChoices()
+    {
+        c.DestroyAllPrompts();
+        c.choice.InitChoices(GetPrompt(), GetChoiceStrs(), GetActions());
+    }
+}
+
+class TestRegPrompt2Bad
+{
+    GameController c;
+    UnityAction NextAction;
+    public TestRegPrompt2Bad(GameController c, UnityAction NextAction)
+    {
+        this.c = c;
+        this.NextAction = NextAction;
+    }
+
+    public void InitChoices()
+    {
+        c.DestroyAllPrompts();
+        c.reg.InitChoices("You made a BAD descision", NextAction);
+    }
+}
+
+class TestRegPrompt2
+{
+    GameController c;
+    UnityAction NextAction;
+    public TestRegPrompt2(GameController c, UnityAction NextAction)
+    {
+        this.c = c;
+        this.NextAction = NextAction;
+    }
+
+    public void InitChoices()
+    {
+        c.DestroyAllPrompts();
+        c.reg.InitChoices("You made a descision", NextAction);
+    }
+}
+
 class TestDescision1
 {
     GameController c;
@@ -109,6 +203,9 @@ public class SequentialLogic : MonoBehaviour
 
     GameController c;
 
+    TestDescision2 td2;
+    TestRegPrompt2Bad tr2Bad;
+    TestRegPrompt2 tr2;
     TestDescision1 td1;
     TestRegPrompt1 tr1;
 
@@ -126,7 +223,12 @@ public class SequentialLogic : MonoBehaviour
         c = new GameController(choiceObj, regObj, spriteObj);
 
         // create TestDescision1 with each choice having callback of TerminalAction
-        td1 = new TestDescision1(c, TerminalAction, TerminalAction, TerminalAction);
+        td2 = new TestDescision2(c, TerminalAction, TerminalAction);
+
+        tr2Bad = new TestRegPrompt2Bad(c, td2.InitChoices);
+        tr2 = new TestRegPrompt2(c, td2.InitChoices);
+        
+        td1 = new TestDescision1(c, tr2.InitChoices, tr2.InitChoices, tr2Bad.InitChoices);
         tr1 = new TestRegPrompt1(c, td1.InitChoices);
 
         // start with first prompt
