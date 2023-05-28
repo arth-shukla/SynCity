@@ -56,3 +56,6 @@ TagManager:
   - name: Front Hill
     uniqueID: 1875362249
     locked: 0
+  - name: Choices
+    uniqueID: 634511579
+    locked: 0

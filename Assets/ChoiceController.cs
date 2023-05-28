@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
 
-public class ChoiceController : MonoBehaviour
+public class ChoiceScript : MonoBehaviour
 {
     public GameObject dialogue;
     public GameObject[] choices;
