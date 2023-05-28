@@ -9,7 +9,6 @@ public class ChoiceController : MonoBehaviour
 {
     public GameObject dialogue;
     public GameObject[] choices;
-    public int choiceMade = 0;
 
     // init choices with given promp, strings, and callbacks
     public void InitChoices(string prompt, string[] choiceStrs, UnityAction[] callbacks)
@@ -22,7 +21,7 @@ public class ChoiceController : MonoBehaviour
             GameObject choice = choices[i];
 
             // if no str or callback given, hide button
-            if (i >= 2)
+            if (i >= System.Math.Min(choiceStrs.Length, callbacks.Length))
             {
                 choice.SetActive(false);
                 continue;
