@@ -526,6 +526,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteArray:
   - {fileID: 21300000, guid: e669cd102578b6642a9af9eb8700c347, type: 3}
+  - {fileID: 21300000, guid: 46078c2a43d535f43b108568aa9bbfc0, type: 3}
+  - {fileID: 21300000, guid: f5fd2728b89ad2d469808daaa5a53ea8, type: 3}
 --- !u!212 &239290998
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -945,6 +947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteArray:
   - {fileID: 21300000, guid: 267fa6865a14a704c8f7bdf580fb6262, type: 3}
+  - {fileID: 21300000, guid: 4f54e60ce8c7d6e40a30c50aee73186e, type: 3}
 --- !u!212 &650207105
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1044,6 +1047,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteArray:
   - {fileID: 21300000, guid: e0634372f1ae60a46871bb6f5f22f0f7, type: 3}
+  - {fileID: 21300000, guid: 2537ff559382af24ca0b23623e0a5a91, type: 3}
+  - {fileID: 21300000, guid: 47c8b4c9a2f92034ba0254eba9701b25, type: 3}
 --- !u!212 &656428474
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2258,10 +2263,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   airPollution: 0
-  Sky: {fileID: 638196238}
   farmlandGrowth: 0
-  forestDead: 0
+  energySource: 0
   waterPollution: 0
+  Sky: {fileID: 638196238}
+  FarmHill: {fileID: 656428471}
+  FrontHill: {fileID: 239290995}
+  Lake: {fileID: 650207102}
+  forestDead: 0
   populationDensity: 0
 --- !u!4 &2008287805
 Transform:

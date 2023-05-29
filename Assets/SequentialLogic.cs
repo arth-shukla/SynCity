@@ -150,11 +150,11 @@ class TestDescision5
     }
 }
 
-class Descision4Okay
+class Descision4Bad     // change after testing (if doesnt match script)
 {
     GameController c;
     UnityAction NextAction;
-    public Descision4Okay(GameController c, UnityAction NextAction)
+    public Descision4Bad(GameController c, UnityAction NextAction)  // change after testing (if doesnt match script)
     {
         this.c = c;
         this.NextAction = NextAction;
@@ -163,7 +163,7 @@ class Descision4Okay
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("You made a okay descision", NextAction);
+        c.reg.InitChoices("bad water", NextAction);
     }
 }
 
@@ -180,7 +180,7 @@ class Descision4Good
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("You made a good descision", NextAction);
+        c.reg.InitChoices("good water", NextAction);
     }
 }
 
@@ -203,36 +203,24 @@ class TestDescision4
     void Choice1()
     {
         c.DestroyAllPrompts();
-
-        c.sprite.IncrAirPol();
-        // decrement algae
-        // etc
-
-        c.sprite.UpdateSky();
-        // all other updates
-
+        c.sprite.waterPollution = 2;  
+        c.sprite.UpdateLake();
         NextChoice1();
     }
 
     void Choice2()
     {
         c.DestroyAllPrompts();
-
-        c.sprite.DecrAirPol();
-        // increment algae
-        // etc
-
-        c.sprite.UpdateSky();
-        // all other updates
-
+        c.sprite.waterPollution = 0;  
+        c.sprite.UpdateLake();
         NextChoice2();
     }
 
     string GetPrompt()
-    { return "Decision 2 prompy"; }
+    { return "lake test"; }
 
     string[] GetChoiceStrs()
-    { return new string[] { "Bad Air Choice", "Good Air Choice" }; }
+    { return new string[] { "algae", "no algae" }; }
 
     UnityAction[] GetActions()
     { return new UnityAction[] { Choice1, Choice2 }; }
@@ -246,11 +234,11 @@ class TestDescision4
 
 
 
-class Descision3Bad
+class Descision3Good
 {
     GameController c;
     UnityAction NextAction;
-    public Descision3Bad(GameController c, UnityAction NextAction)
+    public Descision3Good(GameController c, UnityAction NextAction)
     {
         this.c = c;
         this.NextAction = NextAction;
@@ -259,7 +247,7 @@ class Descision3Bad
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("You made a BAD descision", NextAction);
+        c.reg.InitChoices("windmills", NextAction);
     }
 }
 
@@ -276,15 +264,15 @@ class Descision3Okay
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("You made a okay descision", NextAction);
+        c.reg.InitChoices("no energy source", NextAction);
     }
 }
 
-class Descision3Good
+class Descision3Bad
 {
     GameController c;
     UnityAction NextAction;
-    public Descision3Good(GameController c, UnityAction NextAction)
+    public Descision3Bad(GameController c, UnityAction NextAction)
     {
         this.c = c;
         this.NextAction = NextAction;
@@ -293,7 +281,7 @@ class Descision3Good
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("You made a good descision", NextAction);
+        c.reg.InitChoices("coal plant", NextAction);
     }
 }
 
@@ -316,29 +304,29 @@ class TestDescision3
     void GoodChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.airPollution = 0;
-        c.sprite.UpdateSky();
+        c.sprite.energySource = 2;  
+        c.sprite.UpdateFrontHill();
         NextChoice1();
     }
 
     void OkChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.airPollution = 2;
-        c.sprite.UpdateSky();
+        c.sprite.energySource = 0;  // no energy source (have to edit based on the number of decisions)
+        c.sprite.UpdateFrontHill();
         NextChoice2();
     }
 
     void BadChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.airPollution = 4;
-        c.sprite.UpdateSky();
+        c.sprite.energySource = 4;
+        c.sprite.UpdateFrontHill();
         NextChoice3();
     }
 
     string GetPrompt()
-    { return "Test Descision: Water"; }
+    { return "energy source test"; }
 
     string[] GetChoiceStrs()
     { return new string[] { "Good Choice", "Ok Choice", "Bad Choice" }; }
@@ -354,23 +342,6 @@ class TestDescision3
 }
 
 
-class Descision2Bad
-{
-    GameController c;
-    UnityAction NextAction;
-    public Descision2Bad(GameController c, UnityAction NextAction)
-    {
-        this.c = c;
-        this.NextAction = NextAction;
-    }
-
-    public void InitChoices()
-    {
-        c.DestroyAllPrompts();
-        c.reg.InitChoices("You made a BAD descision", NextAction);
-    }
-}
-
 class Descision2Good
 {
     GameController c;
@@ -384,7 +355,24 @@ class Descision2Good
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("You made a descision", NextAction);
+        c.reg.InitChoices("good farm", NextAction);
+    }
+}
+
+class Descision2Bad
+{
+    GameController c;
+    UnityAction NextAction;
+    public Descision2Bad(GameController c, UnityAction NextAction)
+    {
+        this.c = c;
+        this.NextAction = NextAction;
+    }
+
+    public void InitChoices()
+    {
+        c.DestroyAllPrompts();
+        c.reg.InitChoices("bad farm", NextAction);
     }
 }
 
@@ -407,36 +395,24 @@ class TestDescision2
     void Choice1()
     {
         c.DestroyAllPrompts();
-
-        c.sprite.IncrAirPol();
-        // decrement algae
-        // etc
-
-        c.sprite.UpdateSky();
-        // all other updates
-
+        c.sprite.farmlandGrowth = 2;    // for testing purposes
+        c.sprite.UpdateFarmHill();
         NextChoice1();
     }
 
     void Choice2()
     {
         c.DestroyAllPrompts();
-
-        c.sprite.DecrAirPol();
-        // increment algae
-        // etc
-
-        c.sprite.UpdateSky();
-        // all other updates
-
-        NextChoice2();
+        c.sprite.farmlandGrowth = 4;    // for testing purposes
+        c.sprite.UpdateFarmHill();
+        NextChoice1();
     }
 
     string GetPrompt()
-    { return "Decision 2 prompy"; }
+    { return "farmhill test"; }
 
     string[] GetChoiceStrs()
-    { return new string[] { "Bad Air Choice", "Good Air Choice" }; }
+    { return new string[] { "good crops", "bad crops" }; }
 
     UnityAction[] GetActions()
     { return new UnityAction[] { Choice1, Choice2 }; }
@@ -572,7 +548,7 @@ public class SequentialLogic : MonoBehaviour
     Descision5Good td5g;
     TestDescision5 td5;
 
-    Descision4Okay td4o;
+    Descision4Bad td4o;     // change after testing (if doesnt match script)
     Descision4Good td4g;
     TestDescision4 td4;
 
@@ -614,7 +590,7 @@ public class SequentialLogic : MonoBehaviour
 
         td5 = new TestDescision5(c, td5b.InitChoices, td5o.InitChoices, td5g.InitChoices);
 
-        td4o = new Descision4Okay(c, td5.InitChoices);
+        td4o = new Descision4Bad(c, td5.InitChoices);       // change after testing (if doesnt match script)
         td4g = new Descision4Good(c, td5.InitChoices);
 
 
