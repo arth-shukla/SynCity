@@ -14,6 +14,8 @@ public class SpriteLogic : MonoBehaviour
     public GameObject Sky;
     public GameObject FarmHill;
     public GameObject FrontHill;
+    public GameObject CoalPlant;
+    public GameObject Windmills;
     public GameObject Lake; 
     
 
@@ -24,7 +26,23 @@ public class SpriteLogic : MonoBehaviour
     public void UpdateFarmHill() { FarmHill.GetComponent<SpriteChanger>().ChangeSprite((int)(farmlandGrowth / 2)); }
 
     [ContextMenu("UpdateFrontHill")]
-    public void UpdateFrontHill() { FrontHill.GetComponent<SpriteChanger>().ChangeSprite((int)(energySource / 2)); }
+    public void UpdateFrontHill() { 
+        if(energySource == 2){
+            FrontHill.SetActive(true);
+            CoalPlant.SetActive(false);
+            Windmills.SetActive(true);
+        }
+        else if(energySource == 4){
+            FrontHill.SetActive(false);
+            CoalPlant.SetActive(true);
+            Windmills.SetActive(false);
+        }
+        else{
+            FrontHill.SetActive(true);
+            CoalPlant.SetActive(false);
+            Windmills.SetActive(false);
+        }
+     }
 
     [ContextMenu("UpdateLake")]
     public void UpdateLake() { Lake.GetComponent<SpriteChanger>().ChangeSprite((int)(waterPollution / 2)); }
