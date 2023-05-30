@@ -140,7 +140,7 @@ class TestDescision5 //Green Infrastructure/Conservation Efforts
     }
 
     string GetPrompt()
-    { return "The citizens of Farmville are educated about climate change and want to make the city greener and "
+    { return "The citizens of Farmville are educated about climate change and want to make the city greener and " +
         "even more sustainable. What will you do with the forest on the left hill? "; }
 
     string[] GetChoiceStrs()
@@ -329,6 +329,9 @@ class TestDescision3 // Water Demand
     void OkChoice()
     {
         c.DestroyAllPrompts();
+        c.sprite.waterPollution = 1;
+        c.sprite.UpdateAirCount();   // testing counter for sky
+        c.sprite.UpdateSky();
         NextChoice2();
     }
 
