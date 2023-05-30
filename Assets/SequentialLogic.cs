@@ -56,7 +56,8 @@ class Descision5Bad
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("You made a BAD descision", NextAction);
+        c.reg.InitChoices("An EV factory might seem like a good choice as Electric Vehicles are better than gas cars but we are " +
+        "still creating a factory that doesn’t help the environment and demolishing a beautiful forest.", NextAction);
     }
 }
 
@@ -73,7 +74,9 @@ class Descision5Okay
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("You made a okay descision", NextAction);
+        c.reg.InitChoices("Some incinerators burn waste on a massive scale and turn it into energy, leading them to " +
+            "be touted as green alternatives to landfill. The waste incinerator produces toxic pollutants and hazardous " +
+            "ash that can harm lives which could lead to cancer. ", NextAction);
     }
 }
 
@@ -90,11 +93,11 @@ class Descision5Good
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("You made a good descision", NextAction);
+        c.reg.InitChoices("Great choice! Now you are able to attract visitors from all of the countries through tourism. ", NextAction);
     }
 }
 
-class TestDescision5
+class TestDescision5 //Green Infrastructure/Conservation Efforts
 {
     GameController c;
     UnityAction NextChoice1;
@@ -113,7 +116,7 @@ class TestDescision5
     void GoodChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.airPollution = 0;
+        c.sprite.airPollution = 0; 
         c.sprite.UpdateSky();
         NextChoice1();
     }
@@ -121,7 +124,7 @@ class TestDescision5
     void OkChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.airPollution = 2;
+        c.sprite.airPollution = 2; //Waste  incinerator
         c.sprite.UpdateSky();
         NextChoice2();
     }
@@ -129,13 +132,13 @@ class TestDescision5
     void BadChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.airPollution = 4;
+        c.sprite.airPollution = 4; // Forest Gone EV factory 
         c.sprite.UpdateSky();
         NextChoice3();
     }
 
     string GetPrompt()
-    { return "Test Descision: Conservation"; }
+    { return "Green Infrastructure/Conservation Efforts"; }
 
     string[] GetChoiceStrs()
     { return new string[] { "Good Choice", "Ok Choice", "Bad Choice" }; }
@@ -150,11 +153,11 @@ class TestDescision5
     }
 }
 
-class Descision4Bad     // change after testing (if doesnt match script)
+class Descision4Okay     // change after testing (if doesnt match script)
 {
     GameController c;
     UnityAction NextAction;
-    public Descision4Bad(GameController c, UnityAction NextAction)  // change after testing (if doesnt match script)
+    public Descision4Okay(GameController c, UnityAction NextAction)  // change after testing (if doesnt match script)
     {
         this.c = c;
         this.NextAction = NextAction;
@@ -163,7 +166,8 @@ class Descision4Bad     // change after testing (if doesnt match script)
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("bad water", NextAction);
+            c.reg.InitChoices("Dams are helpful in generating clean energy, drinking water, irrigation, and flood control. " +
+            "But they can harm ecosystems, food security, and communities. ", NextAction);
     }
 }
 
@@ -180,11 +184,13 @@ class Descision4Good
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("good water", NextAction);
+        c.reg.InitChoices("Physical structures in the water attract marine life; this is known as the fish aggregation " +
+            "device effect. Small fish use the structure for protection from predators and feed on fouling organisms such as " +
+            "algae, anemones, and mussels that live on them. ", NextAction); // Ask Socihi to fix this
     }
 }
 
-class TestDescision4
+class TestDescision4 // Water Energy 
 {
     GameController c;
     UnityAction NextChoice1;
@@ -200,30 +206,26 @@ class TestDescision4
         this.NextChoice3 = NextChoice3;
     }
 
-    void Choice1()
+    void GoodChoice()
     {
-        c.DestroyAllPrompts();
-        c.sprite.waterPollution = 2;  
-        c.sprite.UpdateLake();
+        c.DestroyAllPrompts(); // Add DAM
         NextChoice1();
     }
 
-    void Choice2()
+    void OkayChoice()
     {
-        c.DestroyAllPrompts();
-        c.sprite.waterPollution = 0;  
-        c.sprite.UpdateLake();
+        c.DestroyAllPrompts(); // ADD WAVE POWER
         NextChoice2();
     }
 
     string GetPrompt()
-    { return "lake test"; }
+    { return "lWater Energy Sources"; }
 
     string[] GetChoiceStrs()
-    { return new string[] { "algae", "no algae" }; }
+    { return new string[] { "Wave Power", "Dam" }; }
 
     UnityAction[] GetActions()
-    { return new UnityAction[] { Choice1, Choice2 }; }
+    { return new UnityAction[] { GoodChoice, OkayChoice }; }
 
     public void InitChoices()
     {
@@ -247,7 +249,9 @@ class Descision3Good
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("windmills", NextAction);
+        c.reg.InitChoices("Good Choice! The injection of freshwater into aquifers can help to act as a barrier, while " +
+            "intrusion recharges groundwater resources. In areas where streamflow declines due to climate change, water " + 
+            "levels may fall below intake for water treatment plants.", NextAction);
     }
 }
 
@@ -264,7 +268,9 @@ class Descision3Okay
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("no energy source", NextAction);
+        c.reg.InitChoices("Water first, then sanitation, and disconnected from the natural water cycle principles. " +
+            "The protection of the environment by ensuring safe withdrawals and waste discharges adequate for the natural " +
+            "treatment capacity of ecosystems has been the next focus of many stakeholders.", NextAction);
     }
 }
 
@@ -281,11 +287,13 @@ class Descision3Bad
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("coal plant", NextAction);
+        c.reg.InitChoices("Boilers burn fuel to generate steam for space heating, hot water, and generating electric power. " +
+            "The environmental impact of boilers can arise from air emissions from fuel combustion, wastewater from cooling and " +
+            "cleaning, and solid waste from ash disposal.", NextAction);
     }
 }
 
-class TestDescision3
+class TestDescision3 // Water Demand
 {
     GameController c;
     UnityAction NextChoice1;
@@ -304,29 +312,27 @@ class TestDescision3
     void GoodChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.energySource = 2;  
-        c.sprite.UpdateFrontHill();
+        c.sprite.waterPollution = 0;  
+        c.sprite.UpdateLake();
         NextChoice1();
     }
 
     void OkChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.energySource = 0;  // no energy source (have to edit based on the number of decisions)
-        c.sprite.UpdateFrontHill();
         NextChoice2();
     }
 
     void BadChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.energySource = 4;
-        c.sprite.UpdateFrontHill();
+        c.sprite.waterPollution = 2;  
+        c.sprite.UpdateLake();
         NextChoice3();
     }
 
     string GetPrompt()
-    { return "energy source test"; }
+    { return "Water Demand"; }
 
     string[] GetChoiceStrs()
     { return new string[] { "Good Choice", "Ok Choice", "Bad Choice" }; }
@@ -355,7 +361,8 @@ class Descision2Good
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("good farm", NextAction);
+        c.reg.InitChoices("Great choice to keep Farmville environmentally friendly. Oil " +
+            "will eventually run out within decades, and investing in green energy creates a sustainable future!", NextAction);
     }
 }
 
@@ -372,11 +379,12 @@ class Descision2Bad
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("bad farm", NextAction);
+        c.reg.InitChoices("This is a bad idea—it’s harmful lobbying and building the plants harm the environment " +
+            "by releasing pollutants into the air. The money isn’t worth it!", NextAction);
     }
 }
 
-class TestDescision2
+class TestDescision2 //Investing 
 {
     GameController c;
     UnityAction NextChoice1;
@@ -392,30 +400,34 @@ class TestDescision2
         this.NextChoice3 = NextChoice3;
     }
 
-    void Choice1()
+    void GoodChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.farmlandGrowth = 2;    // for testing purposes
-        c.sprite.UpdateFarmHill();
+        c.sprite.energySource = 2;  
+        c.sprite.airPollution = 0;
+        c.sprite.UpdateSky();
+        c.sprite.UpdateFrontHill();
         NextChoice1();
     }
 
-    void Choice2()
+    void BadChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.farmlandGrowth = 4;    // for testing purposes
-        c.sprite.UpdateFarmHill();
-        NextChoice1();
+        c.sprite.energySource = 4;
+        c.sprite.airPollution = 4;
+        c.sprite.UpdateSky();
+        c.sprite.UpdateFrontHill();
+        NextChoice2();
     }
 
     string GetPrompt()
-    { return "farmhill test"; }
+    { return "Investing"; }
 
     string[] GetChoiceStrs()
-    { return new string[] { "good crops", "bad crops" }; }
+    { return new string[] { "Windmills", "Coal" }; }
 
     UnityAction[] GetActions()
-    { return new UnityAction[] { Choice1, Choice2 }; }
+    { return new UnityAction[] { GoodChoice, BadChoice }; }
 
     public void InitChoices()
     {
@@ -437,7 +449,7 @@ class Descision1Bad
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("You made a BAD descision", NextAction);
+        c.reg.InitChoices("This option increases the amount of crop growth but unfortunately has side effects that pollute the water and soil with Nitrogen. ", NextAction);
     }
 }
 
@@ -454,18 +466,18 @@ class Descision1Good
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("You made a descision", NextAction);
+        c.reg.InitChoices("This option promotes less food waste and reuses it to produce food to meet the demand. ", NextAction);
     }
 }
 
-class TestDescision1
+class TestDescision1 //Farming
 {
     GameController c;
     UnityAction NextChoice1;
     UnityAction NextChoice2;
     UnityAction NextChoice3;
     public TestDescision1(
-        GameController c, UnityAction NextChoice1, UnityAction NextChoice2, UnityAction NextChoice3
+        GameController c, UnityAction NextChoice1, UnityAction NextChoice2, UnityAction NextChoice3 = null
     )
     {
         this.c = c;
@@ -477,35 +489,30 @@ class TestDescision1
     void GoodChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.airPollution = 0;
-        c.sprite.UpdateSky();
+        c.sprite.farmlandGrowth = 4;    // for testing purposes
+        c.sprite.UpdateFarmHill();
         NextChoice1();
-    }
 
-    void OkChoice()
-    {
-        c.DestroyAllPrompts();
-        c.sprite.airPollution = 2;
-        c.sprite.UpdateSky();
-        NextChoice2();
     }
 
     void BadChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.airPollution = 4;
-        c.sprite.UpdateSky();
-        NextChoice3();
+        c.sprite.farmlandGrowth = 2;    // for testing purposes
+        c.sprite.waterPollution = 2;  
+        c.sprite.UpdateLake();
+        c.sprite.UpdateFarmHill();
+        NextChoice2();
     }
 
     string GetPrompt()
-    { return "Test Descision: Air Pollution"; }
+    { return "Farming"; }
 
     string[] GetChoiceStrs()
-    { return new string[] { "Good Choice", "Ok Choice", "Bad Choice" }; }
+    { return new string[] { "Good Choice", "Bad Choice" }; }
 
     UnityAction[] GetActions()
-    { return new UnityAction[] { GoodChoice, OkChoice, BadChoice }; }
+    { return new UnityAction[] { GoodChoice,  BadChoice }; }
 
     public void InitChoices()
     {
@@ -527,7 +534,7 @@ class StartingPrompt
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("Here is a starting prompt", NextAction);
+        c.reg.InitChoices("Welcome to Farmville!" , NextAction);
     }
 }
 
@@ -548,7 +555,7 @@ public class SequentialLogic : MonoBehaviour
     Descision5Good td5g;
     TestDescision5 td5;
 
-    Descision4Bad td4o;     // change after testing (if doesnt match script)
+    Descision4Okay td4o;     // change after testing (if doesnt match script)
     Descision4Good td4g;
     TestDescision4 td4;
 
@@ -588,29 +595,29 @@ public class SequentialLogic : MonoBehaviour
         td5o = new Descision5Okay(c, ep.InitChoices);
         td5g = new Descision5Good(c, ep.InitChoices);
 
-        td5 = new TestDescision5(c, td5b.InitChoices, td5o.InitChoices, td5g.InitChoices);
+        td5 = new TestDescision5(c, td5g.InitChoices, td5o.InitChoices, td5b.InitChoices);
 
-        td4o = new Descision4Bad(c, td5.InitChoices);       // change after testing (if doesnt match script)
+        td4o = new Descision4Okay(c, td5.InitChoices);       // change after testing (if doesnt match script)
         td4g = new Descision4Good(c, td5.InitChoices);
 
 
-        td4 = new TestDescision4(c, td4o.InitChoices, td4g.InitChoices);
+        td4 = new TestDescision4(c, td4g.InitChoices, td4o.InitChoices);
 
         td3b = new Descision3Bad(c, td4.InitChoices);
         td3o = new Descision3Okay(c, td4.InitChoices);
         td3g = new Descision3Good(c, td4.InitChoices);
 
-        td3 = new TestDescision3(c, td3b.InitChoices, td3o.InitChoices, td3g.InitChoices);
+        td3 = new TestDescision3(c, td3g.InitChoices, td3o.InitChoices, td3b.InitChoices);
 
         td2b = new Descision2Bad(c, td3.InitChoices);
         td2g = new Descision2Good(c, td3.InitChoices);
 
-        td2 = new TestDescision2(c, td2b.InitChoices, td2g.InitChoices);
+        td2 = new TestDescision2(c, td2g.InitChoices, td2b.InitChoices);
 
         td1b = new Descision1Bad(c, td2.InitChoices);
         td1g = new Descision1Good(c, td2.InitChoices);
 
-        td1 = new TestDescision1(c, td1g.InitChoices, td1g.InitChoices, td1b.InitChoices);
+        td1 = new TestDescision1(c, td1g.InitChoices, td1b.InitChoices);
 
         sp = new StartingPrompt(c, td1.InitChoices);
 
