@@ -124,7 +124,8 @@ class TestDescision5 //Green Infrastructure/Conservation Efforts
     void OkChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.airPollution = 2; //Waste  incinerator
+        //c.sprite.airPollution = 2; //Waste  incinerator
+        c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
         NextChoice2();
     }
@@ -132,7 +133,8 @@ class TestDescision5 //Green Infrastructure/Conservation Efforts
     void BadChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.airPollution = 4; // Forest Gone EV factory 
+        //c.sprite.airPollution = 4; // Forest Gone EV factory 
+        c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
         NextChoice3();
     }
@@ -209,12 +211,16 @@ class TestDescision4 // Water Energy
     void GoodChoice()
     {
         c.DestroyAllPrompts(); // Add DAM
+        c.sprite.UpdateAirCount();   // testing counter for sky 
+        c.sprite.UpdateSky();
         NextChoice1();
     }
 
     void OkayChoice()
     {
         c.DestroyAllPrompts(); // ADD WAVE POWER
+        c.sprite.UpdateAirCount();   // testing counter for sky 
+        c.sprite.UpdateSky();
         NextChoice2();
     }
 
@@ -312,7 +318,9 @@ class TestDescision3 // Water Demand
     void GoodChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.waterPollution = 0;  
+        c.sprite.waterPollution = 0;
+        c.sprite.UpdateAirCount();   // testing counter for sky
+        c.sprite.UpdateSky();
         c.sprite.UpdateLake();
         NextChoice1();
     }
@@ -326,7 +334,9 @@ class TestDescision3 // Water Demand
     void BadChoice()
     {
         c.DestroyAllPrompts();
-        c.sprite.waterPollution = 2;  
+        c.sprite.waterPollution = 2; 
+        c.sprite.UpdateAirCount();   // testing counter for sky 
+        c.sprite.UpdateSky();
         c.sprite.UpdateLake();
         NextChoice3();
     }
@@ -404,7 +414,8 @@ class TestDescision2 //Investing
     {
         c.DestroyAllPrompts();
         c.sprite.energySource = 2;  
-        c.sprite.airPollution = 0;
+        c.sprite.AirPolChoice = 2;
+        c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
         c.sprite.UpdateFrontHill();
         NextChoice1();
@@ -414,7 +425,8 @@ class TestDescision2 //Investing
     {
         c.DestroyAllPrompts();
         c.sprite.energySource = 4;
-        c.sprite.airPollution = 4;
+        c.sprite.AirPolChoice = 1;
+        c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
         c.sprite.UpdateFrontHill();
         NextChoice2();
