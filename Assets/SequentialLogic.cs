@@ -140,7 +140,8 @@ class TestDescision5 //Green Infrastructure/Conservation Efforts
     }
 
     string GetPrompt()
-    { return "Green Infrastructure/Conservation Efforts"; }
+    { return "The citizens of Farmville are educated about climate change and want to make the city greener and "
+        "even more sustainable. What will you do with the forest on the left hill? "; }
 
     string[] GetChoiceStrs()
     { return new string[] { "Good Choice", "Ok Choice", "Bad Choice" }; }
@@ -186,9 +187,8 @@ class Descision4Good
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("Physical structures in the water attract marine life; this is known as the fish aggregation " +
-            "device effect. Small fish use the structure for protection from predators and feed on fouling organisms such as " +
-            "algae, anemones, and mussels that live on them. ", NextAction); // Ask Socihi to fix this
+        c.reg.InitChoices("Using wave energy as a renewable energy source has a high chance of not interfering with wildlife, " +
+        "unlike hydropower, as their versatility allows them to be installed around man-made marine structures, such as unused breakwaters.", NextAction); 
     }
 }
 
@@ -225,7 +225,8 @@ class TestDescision4 // Water Energy
     }
 
     string GetPrompt()
-    { return "lWater Energy Sources"; }
+    { return "The population of Farmville keeps growing! The government is offering a generous grant to " +
+    "help you invest in an energy source. How will you invest in the city? "; }
 
     string[] GetChoiceStrs()
     { return new string[] { "Wave Power", "Dam" }; }
@@ -342,7 +343,7 @@ class TestDescision3 // Water Demand
     }
 
     string GetPrompt()
-    { return "Water Demand"; }
+    { return "OH NO! Farmville has had an insane drought due to global warming and now citizens have less access to clean water. What will you do?"; }
 
     string[] GetChoiceStrs()
     { return new string[] { "Good Choice", "Ok Choice", "Bad Choice" }; }
@@ -433,7 +434,8 @@ class TestDescision2 //Investing
     }
 
     string GetPrompt()
-    { return "Investing"; }
+    { return "Corporate executive John McJohnson has approached you with the opportunity " +
+        "to construct an oil/coal plant in Farmville for a generous amount of money. What will you do?"; }
 
     string[] GetChoiceStrs()
     { return new string[] { "Windmills", "Coal" }; }
@@ -518,7 +520,7 @@ class TestDescision1 //Farming
     }
 
     string GetPrompt()
-    { return "Farming"; }
+    { return " The residents of Farmville are hungry and demand food. How will you start off your farming adventure?"; }
 
     string[] GetChoiceStrs()
     { return new string[] { "Good Choice", "Bad Choice" }; }
