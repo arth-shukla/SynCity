@@ -9,6 +9,7 @@ public class ChoiceController : MonoBehaviour
 {
     public GameObject dialogue;
     public GameObject dialogueTitle;
+    public GameObject choiceTextbox;
     public GameObject[] choices;
 
     // init choices with given promp, strings, and callbacks
@@ -18,6 +19,7 @@ public class ChoiceController : MonoBehaviour
         dialogue.GetComponent<TextMeshProUGUI>().text = prompt;
         dialogueTitle.SetActive(true);
         dialogueTitle.GetComponent<TextMeshProUGUI>().text = title;
+        choiceTextbox.SetActive(true);
         
 
         for (int i = 0; i < choices.Length; ++i) {
@@ -46,6 +48,7 @@ public class ChoiceController : MonoBehaviour
     {
         dialogue.SetActive(false);
         dialogueTitle.SetActive(false);
+        choiceTextbox.SetActive(false);
         foreach (GameObject choice in choices)
         {
             choice.SetActive(false);
