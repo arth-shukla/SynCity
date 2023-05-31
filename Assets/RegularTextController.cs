@@ -9,13 +9,40 @@ public class RegularTextController : MonoBehaviour
 {
     public GameObject dialogue;
     public GameObject next;
-    public GameObject dialogueTextbox;
+    public GameObject normalDialogueTextbox;
+    public GameObject goodDialogueTextbox;
+    public GameObject badDialogueTextbox;
+
+    void TurnOffTextboxes()
+    {
+            normalDialogueTextbox.SetActive(false);
+            goodDialogueTextbox.SetActive(false);
+            badDialogueTextbox.SetActive(false);
+    }
+
+    void TurnOnTextbox(int goodness)
+    {
+        if (goodness == -1)
+        {
+            badDialogueTextbox.SetActive(true);
+        }
+        else if (goodness == 1)
+        {
+            goodDialogueTextbox.SetActive(true);
+        }
+        else
+        {
+            normalDialogueTextbox.SetActive(true);
+        }
+    }
 
     // init choices with given prompt and callback
-    public void InitChoices(string prompt, UnityAction nextCallback)
+    public void InitChoices(string prompt, UnityAction nextCallback, int goodness = 0)
     {
+        TurnOffTextboxes();
+        TurnOnTextbox(goodness);
+        
         dialogue.SetActive(true);
-        dialogueTextbox.SetActive(true);
         dialogue.GetComponent<TextMeshProUGUI>().text = prompt;
 
         next.SetActive(true);
@@ -27,8 +54,8 @@ public class RegularTextController : MonoBehaviour
     // hide all elements
     public void DestroyChoices()
     {
+        TurnOffTextboxes();
         dialogue.SetActive(false);
-        dialogueTextbox.SetActive(false);
         next.SetActive(false);
 
         Button nextButton = next.GetComponent<Button>();
