@@ -1471,7 +1471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &932268813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1833,7 +1833,6 @@ MonoBehaviour:
   normalDialogueTextbox: {fileID: 221289309}
   goodDialogueTextbox: {fileID: 481419405}
   badDialogueTextbox: {fileID: 83673687}
-  dialogueTextbox: {fileID: 221289309}
 --- !u!1 &1168884465
 GameObject:
   m_ObjectHideFlags: 0
