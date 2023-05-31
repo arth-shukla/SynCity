@@ -26,6 +26,9 @@ public class SpriteLogic : MonoBehaviour
     [ContextMenu("UpdateFarmHill")]
     public void UpdateFarmHill() { FarmHill.GetComponent<SpriteChanger>().ChangeSprite((int)(farmlandGrowth / 2)); }
 
+    [ContextMenu("UpdateLake")]
+    public void UpdateLake() { Lake.GetComponent<SpriteChanger>().ChangeSprite((int)(waterPollution / 2)); }
+
     [ContextMenu("UpdateFrontHill")]
     public void UpdateFrontHill() { 
         if(energySource == 2){
@@ -45,8 +48,7 @@ public class SpriteLogic : MonoBehaviour
         }
      }
 
-    [ContextMenu("UpdateLake")]
-    public void UpdateLake() { Lake.GetComponent<SpriteChanger>().ChangeSprite((int)(waterPollution)); }
+
     
     // testing methods (starter increment counters needs editting)
     [ContextMenu("IncrAirPol")]

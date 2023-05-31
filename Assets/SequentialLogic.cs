@@ -139,6 +139,9 @@ class TestDescision5 //Green Infrastructure/Conservation Efforts
         NextChoice3();
     }
 
+    string GetTitle()
+    { return "Decision 5: Green Infrasturcture/ Conservation Efforts"; }
+
     string GetPrompt()
     { return "The citizens of Farmville are educated about climate change and want to make the city greener and " +
         "even more sustainable. What will you do with the forest on the left hill? "; }
@@ -152,7 +155,7 @@ class TestDescision5 //Green Infrastructure/Conservation Efforts
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.choice.InitChoices(GetPrompt(), GetChoiceStrs(), GetActions());
+        c.choice.InitChoices(GetTitle(), GetPrompt(), GetChoiceStrs(), GetActions());
     }
 }
 
@@ -224,6 +227,9 @@ class TestDescision4 // Water Energy
         NextChoice2();
     }
 
+    string GetTitle()
+    { return "Decision 4: Water Energy Sources"; }
+
     string GetPrompt()
     { return "The population of Farmville keeps growing! The government is offering a generous grant to " +
     "help you invest in an energy source. How will you invest in the city? "; }
@@ -237,7 +243,7 @@ class TestDescision4 // Water Energy
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.choice.InitChoices(GetPrompt(), GetChoiceStrs(), GetActions());
+        c.choice.InitChoices(GetTitle(), GetPrompt(), GetChoiceStrs(), GetActions());
     }
 }
 
@@ -345,6 +351,9 @@ class TestDescision3 // Water Demand
         NextChoice3();
     }
 
+    string GetTitle()
+    { return "Decision 3: Water Demand"; }
+
     string GetPrompt()
     { return "OH NO! Farmville has had an insane drought due to global warming and now citizens have less access to clean water. What will you do?"; }
 
@@ -357,7 +366,7 @@ class TestDescision3 // Water Demand
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.choice.InitChoices(GetPrompt(), GetChoiceStrs(), GetActions());
+        c.choice.InitChoices(GetTitle(), GetPrompt(), GetChoiceStrs(), GetActions());
     }
 }
 
@@ -436,6 +445,9 @@ class TestDescision2 //Investing
         NextChoice2();
     }
 
+    string GetTitle()
+    { return "Decision 2: Energy"; }
+
     string GetPrompt()
     { return "Corporate executive John McJohnson has approached you with the opportunity " +
         "to construct an oil/coal plant in Farmville for a generous amount of money. What will you do?"; }
@@ -449,7 +461,7 @@ class TestDescision2 //Investing
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.choice.InitChoices(GetPrompt(), GetChoiceStrs(), GetActions());
+        c.choice.InitChoices(GetTitle(), GetPrompt(), GetChoiceStrs(), GetActions());
     }
 }
 
@@ -522,6 +534,9 @@ class TestDescision1 //Farming
         NextChoice2();
     }
 
+    string GetTitle()
+    { return "Decision 1: Farming"; }
+
     string GetPrompt()
     { return " The residents of Farmville are hungry and demand food. How will you start off your farming adventure?"; }
 
@@ -534,7 +549,7 @@ class TestDescision1 //Farming
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.choice.InitChoices(GetPrompt(), GetChoiceStrs(), GetActions());
+        c.choice.InitChoices(GetTitle(), GetPrompt(), GetChoiceStrs(), GetActions());
     }
 }
 

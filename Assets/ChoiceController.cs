@@ -8,13 +8,16 @@ using UnityEngine.Events;
 public class ChoiceController : MonoBehaviour
 {
     public GameObject dialogue;
+    public GameObject dialogueTitle;
     public GameObject[] choices;
 
     // init choices with given promp, strings, and callbacks
-    public void InitChoices(string prompt, string[] choiceStrs, UnityAction[] callbacks)
+    public void InitChoices(string title, string prompt, string[] choiceStrs, UnityAction[] callbacks)
     {
         dialogue.SetActive(true);
         dialogue.GetComponent<TextMeshProUGUI>().text = prompt;
+        dialogueTitle.GetComponent<TextMeshProUGUI>().text = title;
+        
 
         for (int i = 0; i < choices.Length; ++i) {
 
