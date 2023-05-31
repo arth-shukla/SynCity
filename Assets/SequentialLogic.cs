@@ -140,14 +140,15 @@ class TestDescision5 //Green Infrastructure/Conservation Efforts
     }
 
     string GetTitle()
-    { return "Decision 5: Green Infrasturcture/ Conservation Efforts"; }
+    { return "Decision 5: Conservation Efforts"; }
 
     string GetPrompt()
     { return "The citizens of Farmville are educated about climate change and want to make the city greener and " +
         "even more sustainable. What will you do with the forest on the left hill? "; }
 
     string[] GetChoiceStrs()
-    { return new string[] { "Good Choice", "Ok Choice", "Bad Choice" }; }
+    { return new string[] { "Keep the forest and make it a national park", "Constructing a waste incinerator", "Demolish the forest and add a huge EV factory, controlling " + 
+        "pollution from a contaminated site" }; }
 
     UnityAction[] GetActions()
     { return new UnityAction[] { GoodChoice, OkChoice, BadChoice }; }
@@ -235,7 +236,8 @@ class TestDescision4 // Water Energy
     "help you invest in an energy source. How will you invest in the city? "; }
 
     string[] GetChoiceStrs()
-    { return new string[] { "Wave Power", "Dam" }; }
+    { return new string[] { "Invest in wave power for the long term (with the current technology, it is inefficient yet " +
+        "has a huge potential to grow. There is barely any environmental harm) ", "Build a dam for green energy with grants and gov funding" }; }
 
     UnityAction[] GetActions()
     { return new UnityAction[] { GoodChoice, OkayChoice }; }
@@ -358,7 +360,7 @@ class TestDescision3 // Water Demand
     { return "OH NO! Farmville has had an insane drought due to global warming and now citizens have less access to clean water. What will you do?"; }
 
     string[] GetChoiceStrs()
-    { return new string[] { "Good Choice", "Ok Choice", "Bad Choice" }; }
+    { return new string[] { "Building a new water treatment plant ", "Expanding the water supply infrastructure within Farmville", "Boiler efficiency improvement" }; }
 
     UnityAction[] GetActions()
     { return new UnityAction[] { GoodChoice, OkChoice, BadChoice }; }
@@ -453,7 +455,8 @@ class TestDescision2 //Investing
         "to construct an oil/coal plant in Farmville for a generous amount of money. What will you do?"; }
 
     string[] GetChoiceStrs()
-    { return new string[] { "Windmills", "Coal" }; }
+    { return new string[] { "Reject his request and instead invest in green energy using government grants.", "Open a coal/oil plant, " +
+    "as John offered to invest in Farmville " }; }
 
     UnityAction[] GetActions()
     { return new UnityAction[] { GoodChoice, BadChoice }; }
@@ -541,7 +544,7 @@ class TestDescision1 //Farming
     { return " The residents of Farmville are hungry and demand food. How will you start off your farming adventure?"; }
 
     string[] GetChoiceStrs()
-    { return new string[] { "Good Choice", "Bad Choice" }; }
+    { return new string[] { "Reduce food waste by composting to increase crop production", "Increase farming production using more fertilizers" }; }
 
     UnityAction[] GetActions()
     { return new UnityAction[] { GoodChoice,  BadChoice }; }
