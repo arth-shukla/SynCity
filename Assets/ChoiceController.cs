@@ -16,6 +16,7 @@ public class ChoiceController : MonoBehaviour
     {
         dialogue.SetActive(true);
         dialogue.GetComponent<TextMeshProUGUI>().text = prompt;
+        dialogueTitle.SetActive(true);
         dialogueTitle.GetComponent<TextMeshProUGUI>().text = title;
         
 
@@ -44,6 +45,7 @@ public class ChoiceController : MonoBehaviour
     public void DestroyChoices()
     {
         dialogue.SetActive(false);
+        dialogueTitle.SetActive(false);
         foreach (GameObject choice in choices)
         {
             choice.SetActive(false);
