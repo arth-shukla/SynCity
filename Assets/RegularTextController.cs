@@ -48,7 +48,7 @@ public class RegularTextController : MonoBehaviour
         next.SetActive(true);
         Button nextButton = next.GetComponent<Button>();
         nextButton.onClick.AddListener(nextCallback);
-        next.GetComponentInChildren<TextMeshProUGUI>().text = "Continue";
+        // next.GetComponentInChildren<TextMeshProUGUI>().text = "Continue"; 
     }
 
     // hide all elements
