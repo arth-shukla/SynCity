@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Starting Background.unity
     guid: 05cdeca60f5e8a84a978f70786dafe60
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Second Dialogue.unity
     guid: 5c3ccfb387cd47f4a961e5119f03e760
+  - enabled: 1
+    path: Assets/Scenes/GoodLuck.unity
+    guid: b4d01fbfbfac07e41b61a9b05c2d9f88
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
