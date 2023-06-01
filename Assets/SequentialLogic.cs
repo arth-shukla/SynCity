@@ -236,8 +236,8 @@ class TestDescision4 // Water Energy
     "help you invest in an energy source. How will you invest in the city? "; }
 
     string[] GetChoiceStrs()
-    { return new string[] { "Invest in wave power for the long term (with the current technology, it is inefficient yet " +
-        "has a huge potential to grow. There is barely any environmental harm) ", "Build a dam for green energy with grants and gov funding" }; }
+    { return new string[] { "Invest in wave power for the long term (with the current technology, it is inefficient but" +
+        "has the potential to grow and has little environmental harm) ", "Build a dam for green energy with grants and gov funding" }; }
 
     UnityAction[] GetActions()
     { return new UnityAction[] { GoodChoice, OkayChoice }; }
@@ -544,7 +544,7 @@ class TestDescision1 //Farming
     { return " The residents of Farmville are hungry and demand food. How will you start off your farming adventure?"; }
 
     string[] GetChoiceStrs()
-    { return new string[] { "Reduce food waste by composting to increase crop production", "Increase farming production using more fertilizers" }; }
+    { return new string[] { "Reduce food waste and compost to increase crop production", "Increase farming production using more fertilizers" }; }
 
     UnityAction[] GetActions()
     { return new UnityAction[] { GoodChoice,  BadChoice }; }
