@@ -57,7 +57,7 @@ class Descision5Bad
     {
         c.DestroyAllPrompts();
         c.reg.InitChoices("An EV factory might seem like a good choice as Electric Vehicles are better than gas cars but we are " +
-        "still creating a factory that doesn’t help the environment and demolishing a beautiful forest.", NextAction);
+        "still creating a factory that doesn’t help the environment and demolishing a beautiful forest.", NextAction, -1);
     }
 }
 
@@ -76,7 +76,7 @@ class Descision5Okay
         c.DestroyAllPrompts();
         c.reg.InitChoices("Some incinerators burn waste on a massive scale and turn it into energy, leading them to " +
             "be touted as green alternatives to landfill. The waste incinerator produces toxic pollutants and hazardous " +
-            "ash that can harm lives which could lead to cancer. ", NextAction);
+            "ash that can harm lives which could lead to cancer. ", NextAction, 0);
     }
 }
 
@@ -93,7 +93,7 @@ class Descision5Good
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("Great choice! Now you are able to attract visitors from all of the countries through tourism. ", NextAction);
+        c.reg.InitChoices("Great choice! Now you are able to attract visitors from all of the countries through tourism. ", NextAction, 1);
     }
 }
 
@@ -174,7 +174,7 @@ class Descision4Okay     // change after testing (if doesnt match script)
     {
         c.DestroyAllPrompts();
             c.reg.InitChoices("Dams are helpful in generating clean energy, drinking water, irrigation, and flood control. " +
-            "But they can harm ecosystems, food security, and communities. ", NextAction);
+            "But they can harm ecosystems, food security, and communities. ", NextAction, 0);
     }
 }
 
@@ -192,7 +192,7 @@ class Descision4Good
     {
         c.DestroyAllPrompts();
         c.reg.InitChoices("Using wave energy as a renewable energy source has a high chance of not interfering with wildlife, " +
-        "unlike hydropower, as their versatility allows them to be installed around man-made marine structures, such as unused breakwaters.", NextAction); 
+        "unlike hydropower, as their versatility allows them to be installed around man-made marine structures, such as unused breakwaters.", NextAction, 1); 
     }
 }
 
@@ -266,7 +266,7 @@ class Descision3Good
         c.DestroyAllPrompts();
         c.reg.InitChoices("Good Choice! The injection of freshwater into aquifers can help to act as a barrier, while " +
             "intrusion recharges groundwater resources. In areas where streamflow declines due to climate change, water " + 
-            "levels may fall below intake for water treatment plants.", NextAction);
+            "levels may fall below intake for water treatment plants.", NextAction, 1);
     }
 }
 
@@ -285,7 +285,7 @@ class Descision3Okay
         c.DestroyAllPrompts();
         c.reg.InitChoices("Water first, then sanitation, and disconnected from the natural water cycle principles. " +
             "The protection of the environment by ensuring safe withdrawals and waste discharges adequate for the natural " +
-            "treatment capacity of ecosystems has been the next focus of many stakeholders.", NextAction);
+            "treatment capacity of ecosystems has been the next focus of many stakeholders.", NextAction, 0);
     }
 }
 
@@ -304,7 +304,7 @@ class Descision3Bad
         c.DestroyAllPrompts();
         c.reg.InitChoices("Boilers burn fuel to generate steam for space heating, hot water, and generating electric power. " +
             "The environmental impact of boilers can arise from air emissions from fuel combustion, wastewater from cooling and " +
-            "cleaning, and solid waste from ash disposal.", NextAction);
+            "cleaning, and solid waste from ash disposal.", NextAction, -1);
     }
 }
 
@@ -387,7 +387,7 @@ class Descision2Good
     {
         c.DestroyAllPrompts();
         c.reg.InitChoices("Great choice to keep Farmville environmentally friendly. Oil " +
-            "will eventually run out within decades, and investing in green energy creates a sustainable future!", NextAction);
+            "will eventually run out within decades, and investing in green energy creates a sustainable future!", NextAction, 1);
     }
 }
 
@@ -405,7 +405,7 @@ class Descision2Bad
     {
         c.DestroyAllPrompts();
         c.reg.InitChoices("This is a bad idea—it’s harmful lobbying and building the plants harm the environment " +
-            "by releasing pollutants into the air. The money isn’t worth it!", NextAction);
+            "by releasing pollutants into the air. The money isn’t worth it!", NextAction, -1);
     }
 }
 
@@ -481,7 +481,7 @@ class Descision1Bad
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("This option increases the amount of crop growth but unfortunately has side effects that pollute the water and soil with Nitrogen. ", NextAction);
+        c.reg.InitChoices("This option increases the amount of crop growth but unfortunately has side effects that pollute the water and soil with Nitrogen. ", NextAction, -1);
     }
 }
 
@@ -498,7 +498,7 @@ class Descision1Good
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("This option promotes less food waste and reuses it to produce food to meet the demand. ", NextAction);
+        c.reg.InitChoices("This option promotes less food waste and reuses it to produce food to meet the demand. ", NextAction, 1);
     }
 }
 
