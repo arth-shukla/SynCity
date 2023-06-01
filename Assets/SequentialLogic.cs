@@ -654,9 +654,9 @@ public class SequentialLogic : MonoBehaviour
 
         td1 = new TestDescision1(c, td1g.InitChoices, td1b.InitChoices);
 
-        sp = new StartingPrompt(c, td1.InitChoices);
+        // sp = new StartingPrompt(c, td1.InitChoices);
 
         // start with first prompt
-        sp.InitChoices();
+        td1.InitChoices();
     }
 }
