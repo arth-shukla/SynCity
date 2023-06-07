@@ -11,6 +11,10 @@ public class SpriteLogic : MonoBehaviour
     public int energySource = 0;    // front hill counter (used only once during decision)
     public int waterPollution = 0;   
     public int AirPolChoice = 0;
+    public int waterDemand = 0;
+
+    public int choiceState = 0;
+    public int choiceCounter = 0;   // counter for ending dialogue
 
     public GameObject Sky;
     public GameObject FarmHill;
@@ -18,13 +22,17 @@ public class SpriteLogic : MonoBehaviour
     public GameObject CoalPlant;
     public GameObject Windmills;
     public GameObject Lake; 
-    
 
     [ContextMenu("UpdateSky")]
     public void UpdateSky() { Sky.GetComponent<SpriteChanger>().ChangeSprite((int)(airPollution)); }    // was airPollution / 2, (using current for testing counter)
 
     [ContextMenu("UpdateFarmHill")]
     public void UpdateFarmHill() { FarmHill.GetComponent<SpriteChanger>().ChangeSprite((int)(farmlandGrowth / 2)); }
+
+    [ContextMenu("UpdateForestHill")]
+    public void UpdateForestHill() {
+
+    }
 
     [ContextMenu("UpdateLake")]
     public void UpdateLake() { Lake.GetComponent<SpriteChanger>().ChangeSprite((int)(waterPollution / 2)); }
@@ -71,6 +79,20 @@ public class SpriteLogic : MonoBehaviour
     public void IncrCropQual() { farmlandGrowth = System.Math.Min(5, farmlandGrowth + 1); }
     [ContextMenu("DecrCropQual")]
     public void DecrCropQual() { farmlandGrowth = System.Math.Max(0, farmlandGrowth - 1); }
+
+    [ContextMenu("EndingCounter")]
+    public void EndingCounter() {
+        if(choiceState == -1){  // if make a good choice 
+            choiceCounter = System.Math.Min(5, choiceCounter - 1);
+        }
+        else if(choiceState == 0){  // if make an ok choice
+            choiceCounter = choiceCounter;
+        }
+        else if(choiceState == 1){  // if make a bad choice
+            choiceCounter = System.Math.Max(0, choiceCounter + 1);
+        }
+        
+    }
 
     // ------------------------------------------------
 

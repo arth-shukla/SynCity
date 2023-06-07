@@ -39,7 +39,16 @@ class EndingPrompt
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("Here is a ending prompt", NextAction);
+        if(c.sprite.choiceCounter <= 1){
+            c.reg.InitChoices("good ending", NextAction);
+        }
+        else if(c.sprite.choiceCounter == 2 ){
+            c.reg.InitChoices("ok ending", NextAction);
+        }
+        else if(c.sprite.choiceCounter >= 3){
+            c.reg.InitChoices("damn", NextAction);
+        }
+            
     }
 }
 
@@ -116,8 +125,10 @@ class TestDescision5 //Green Infrastructure/Conservation Efforts
     void GoodChoice()
     {
         c.DestroyAllPrompts();
+        c.sprite.choiceState = -1;
         c.sprite.airPollution = 0; 
         c.sprite.UpdateSky();
+        c.sprite.EndingCounter();
         NextChoice1();
     }
 
@@ -125,17 +136,21 @@ class TestDescision5 //Green Infrastructure/Conservation Efforts
     {
         c.DestroyAllPrompts();
         //c.sprite.airPollution = 2; //Waste  incinerator
+        c.sprite.choiceState = 0;
         c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
+        c.sprite.EndingCounter();
         NextChoice2();
     }
 
     void BadChoice()
     {
         c.DestroyAllPrompts();
-        //c.sprite.airPollution = 4; // Forest Gone EV factory 
+        //c.sprite.airPollution = 4; // Forest Gone EV factory
+        c.sprite.choiceState = 1; 
         c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
+        c.sprite.EndingCounter();
         NextChoice3();
     }
 
@@ -215,16 +230,20 @@ class TestDescision4 // Water Energy
     void GoodChoice()
     {
         c.DestroyAllPrompts(); // Add DAM
+        c.sprite.choiceState = -1;
         c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
+        c.sprite.EndingCounter();
         NextChoice1();
     }
 
     void OkayChoice()
     {
         c.DestroyAllPrompts(); // ADD WAVE POWER
+        c.sprite.choiceState = 0;
         c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
+        c.sprite.EndingCounter();
         NextChoice2();
     }
 
@@ -327,29 +346,38 @@ class TestDescision3 // Water Demand
     void GoodChoice()
     {
         c.DestroyAllPrompts();
+        c.sprite.choiceState = -1;
         c.sprite.waterPollution = 0;
         c.sprite.UpdateAirCount();   // testing counter for sky
         c.sprite.UpdateSky();
+        c.sprite.UpdateForestHill();
         c.sprite.UpdateLake();
+        c.sprite.EndingCounter();
         NextChoice1();
     }
 
     void OkChoice()
     {
         c.DestroyAllPrompts();
+        c.sprite.choiceState = 0;
         c.sprite.waterPollution = 1;
         c.sprite.UpdateAirCount();   // testing counter for sky
         c.sprite.UpdateSky();
+        c.sprite.UpdateForestHill();
+        c.sprite.EndingCounter();
         NextChoice2();
     }
 
     void BadChoice()
     {
         c.DestroyAllPrompts();
+        c.sprite.choiceState = 1;
         c.sprite.waterPollution = 2; 
         c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
+        c.sprite.UpdateForestHill();
         c.sprite.UpdateLake();
+        c.sprite.EndingCounter();
         NextChoice3();
     }
 
@@ -428,22 +456,26 @@ class TestDescision2 //Investing
     void GoodChoice()
     {
         c.DestroyAllPrompts();
+        c.sprite.choiceState = -1;
         c.sprite.energySource = 2;  
         c.sprite.AirPolChoice = 2;
         c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
         c.sprite.UpdateFrontHill();
+        c.sprite.EndingCounter();
         NextChoice1();
     }
 
     void BadChoice()
     {
         c.DestroyAllPrompts();
+        c.sprite.choiceState = 1;
         c.sprite.energySource = 4;
         c.sprite.AirPolChoice = 1;
         c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
         c.sprite.UpdateFrontHill();
+        c.sprite.EndingCounter();
         NextChoice2();
     }
 
@@ -521,8 +553,10 @@ class TestDescision1 //Farming
     void GoodChoice()
     {
         c.DestroyAllPrompts();
+        c.sprite.choiceState = -1;
         c.sprite.farmlandGrowth = 4;    // for testing purposes
         c.sprite.UpdateFarmHill();
+        c.sprite.EndingCounter();
         NextChoice1();
 
     }
@@ -530,10 +564,12 @@ class TestDescision1 //Farming
     void BadChoice()
     {
         c.DestroyAllPrompts();
+        c.sprite.choiceState = 1;
         c.sprite.farmlandGrowth = 2;    // for testing purposes
         c.sprite.waterPollution = 2;  
         c.sprite.UpdateLake();
         c.sprite.UpdateFarmHill();
+        c.sprite.EndingCounter();
         NextChoice2();
     }
 
