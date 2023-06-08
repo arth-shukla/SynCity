@@ -40,13 +40,19 @@ class EndingPrompt
     {
         c.DestroyAllPrompts();
         if(c.sprite.choiceCounter <= 1){
-            c.reg.InitChoices("good ending", NextAction);
+            c.reg.InitChoices("Congratulations on making sustainable choices that have protected the environment " +
+            "and created a thriving community in Farmville. Citizens are " +
+            "excited to work with you on future endeavors. You can play again to see if you can build " +
+            "an even more sustainable city.", NextAction);
         }
         else if(c.sprite.choiceCounter == 2 ){
-            c.reg.InitChoices("ok ending", NextAction);
+            c.reg.InitChoices("Your sustainable choices were good enough to maintain the current population and overall satisfaction of " +
+            "Farmville. Citizens are feeling mediocre about you for another term ands the approval rate has " + 
+            "decreased compared to your original rating. If you want a better outcome, try again! ", NextAction);
         }
         else if(c.sprite.choiceCounter >= 3){
-            c.reg.InitChoices("damn", NextAction);
+            c.reg.InitChoices("Unfortunately, Farmville have been reduced by half since you came to office." +
+            "You have scared everyone away, and your satisfaction rates have been decreasing ever since. You were not able to keep the mayor’s seat as the citizens of Farmville were furious. Try Again! ", NextAction);
         }
             
     }
