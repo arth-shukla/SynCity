@@ -133,7 +133,9 @@ class TestDescision5 //Green Infrastructure/Conservation Efforts
         c.DestroyAllPrompts();
         c.sprite.choiceState = -1;
         c.sprite.airPollution = 0; 
+        c.sprite.conserveEff = 2;
         c.sprite.UpdateSky();
+        c.sprite.UpdateForestHill();
         c.sprite.EndingCounter();
         NextChoice1();
     }
@@ -143,8 +145,10 @@ class TestDescision5 //Green Infrastructure/Conservation Efforts
         c.DestroyAllPrompts();
         //c.sprite.airPollution = 2; //Waste  incinerator
         c.sprite.choiceState = 0;
+        c.sprite.conserveEff = 1;
         c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
+        c.sprite.UpdateForestHill();
         c.sprite.EndingCounter();
         NextChoice2();
     }
@@ -154,8 +158,10 @@ class TestDescision5 //Green Infrastructure/Conservation Efforts
         c.DestroyAllPrompts();
         //c.sprite.airPollution = 4; // Forest Gone EV factory
         c.sprite.choiceState = 1; 
+        c.sprite.conserveEff = 3;
         c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
+        c.sprite.UpdateForestHill();
         c.sprite.EndingCounter();
         NextChoice3();
     }
@@ -237,8 +243,10 @@ class TestDescision4 // Water Energy
     {
         c.DestroyAllPrompts(); // Add DAM
         c.sprite.choiceState = -1;
+        c.sprite.waterEnergy = 2;
         c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
+        c.sprite.UpdateWaterEnergy();
         c.sprite.EndingCounter();
         NextChoice1();
     }
@@ -247,14 +255,20 @@ class TestDescision4 // Water Energy
     {
         c.DestroyAllPrompts(); // ADD WAVE POWER
         c.sprite.choiceState = 0;
+        c.sprite.waterEnergy = 1;
         c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
+        c.sprite.UpdateWaterEnergy();
         c.sprite.EndingCounter();
         NextChoice2();
     }
 
     string GetTitle()
-    { return "Decision 4: Water Energy Sources"; }
+    {   // takes out smoke of houses after playing decision 3
+        c.sprite.waterDemand = 3;
+        c.sprite.UpdateTreatment(); 
+
+        return "Decision 4: Water Energy Sources"; }
 
     string GetPrompt()
     { return "The population of Farmville keeps growing! The government is offering a generous grant to " +
@@ -354,22 +368,22 @@ class TestDescision3 // Water Demand
         c.DestroyAllPrompts();
         c.sprite.choiceState = -1;
         c.sprite.waterPollution = 0;
+        c.sprite.waterDemand = 2;
         c.sprite.UpdateAirCount();   // testing counter for sky
         c.sprite.UpdateSky();
-        c.sprite.UpdateForestHill();
         c.sprite.UpdateLake();
+        c.sprite.UpdateTreatment();
         c.sprite.EndingCounter();
         NextChoice1();
     }
 
-    void OkChoice()
+    void OkChoice() // no change to the game
     {
         c.DestroyAllPrompts();
         c.sprite.choiceState = 0;
         c.sprite.waterPollution = 1;
         c.sprite.UpdateAirCount();   // testing counter for sky
         c.sprite.UpdateSky();
-        c.sprite.UpdateForestHill();
         c.sprite.EndingCounter();
         NextChoice2();
     }
@@ -379,10 +393,11 @@ class TestDescision3 // Water Demand
         c.DestroyAllPrompts();
         c.sprite.choiceState = 1;
         c.sprite.waterPollution = 2; 
+        c.sprite.waterDemand = 1;
         c.sprite.UpdateAirCount();   // testing counter for sky 
         c.sprite.UpdateSky();
-        c.sprite.UpdateForestHill();
         c.sprite.UpdateLake();
+        c.sprite.UpdateTreatment();
         c.sprite.EndingCounter();
         NextChoice3();
     }
@@ -572,7 +587,7 @@ class TestDescision1 //Farming
         c.DestroyAllPrompts();
         c.sprite.choiceState = 1;
         c.sprite.farmlandGrowth = 2;    // for testing purposes
-        c.sprite.waterPollution = 2;  
+        c.sprite.waterPollution = 1;  
         c.sprite.UpdateLake();
         c.sprite.UpdateFarmHill();
         c.sprite.EndingCounter();

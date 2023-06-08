@@ -12,6 +12,8 @@ public class SpriteLogic : MonoBehaviour
     public int waterPollution = 0;   
     public int AirPolChoice = 0;
     public int waterDemand = 0;
+    public int waterEnergy = 0;
+    public int conserveEff = 0;
 
     public int choiceState = 0;
     public int choiceCounter = 0;   // counter for ending dialogue
@@ -22,6 +24,15 @@ public class SpriteLogic : MonoBehaviour
     public GameObject CoalPlant;
     public GameObject Windmills;
     public GameObject Lake; 
+    public GameObject SmokeHouse;
+    public GameObject WaterTreat;
+    public GameObject Waves;
+    public GameObject Dam;
+    public GameObject ForestHill;
+    public GameObject WasteIncin;
+    public GameObject Factory;
+    public GameObject Park;
+
 
     [ContextMenu("UpdateSky")]
     public void UpdateSky() { Sky.GetComponent<SpriteChanger>().ChangeSprite((int)(airPollution)); }    // was airPollution / 2, (using current for testing counter)
@@ -30,12 +41,28 @@ public class SpriteLogic : MonoBehaviour
     public void UpdateFarmHill() { FarmHill.GetComponent<SpriteChanger>().ChangeSprite((int)(farmlandGrowth / 2)); }
 
     [ContextMenu("UpdateForestHill")]
-    public void UpdateForestHill() {
-
+    public void UpdateForestHill() { 
+        if(conserveEff == 0){ // initial forest hill
+            ForestHill.SetActive(true);
+            WasteIncin.SetActive(false);
+            Park.SetActive(false);
+            Factory.SetActive(false);
+        }
+        else if(conserveEff == 1){  // add waste incinerator
+            WasteIncin.SetActive(true);
+        }
+        else if(conserveEff == 2){  // add national park
+            ForestHill.SetActive(false);
+            Park.SetActive(true);
+        }
+        else if(conserveEff == 3){  // add factory
+            ForestHill.SetActive(false);
+            Factory.SetActive(true);
+        }
     }
 
     [ContextMenu("UpdateLake")]
-    public void UpdateLake() { Lake.GetComponent<SpriteChanger>().ChangeSprite((int)(waterPollution / 2)); }
+    public void UpdateLake() { Lake.GetComponent<SpriteChanger>().ChangeSprite((int)(waterPollution)); }
 
     [ContextMenu("UpdateFrontHill")]
     public void UpdateFrontHill() { 
@@ -54,9 +81,40 @@ public class SpriteLogic : MonoBehaviour
             CoalPlant.SetActive(false);
             Windmills.SetActive(false);
         }
-     }
+    }
 
+    [ContextMenu("UpdateTreatment")]
+    public void UpdateTreatment() {
+        if(waterDemand == 1){   // boiler efficiency
+            SmokeHouse.SetActive(true);
+            WaterTreat.SetActive(false);
+        }
+        else if(waterDemand == 2){  // water treatment
+            SmokeHouse.SetActive(false);
+            WaterTreat.SetActive(true);
+        }
+        else if(waterDemand == 3){  // turn off smoke image on next decision
+            SmokeHouse.SetActive(false);
+        }
+        else{   // if ok decision or before decision 3
+            SmokeHouse.SetActive(false);
+            WaterTreat.SetActive(false);
+        }
+    }
 
+    [ContextMenu("UpdateWaterEnergy")]
+    public void UpdateWaterEnergy() {
+        if(waterEnergy == 1){   // add dam
+            Dam.SetActive(true);
+        }
+        else if(waterEnergy == 2){  // add wave power
+            Waves.SetActive(true);
+        }
+        else{
+            Dam.SetActive(false);
+            Waves.SetActive(false);
+        }
+    }
     
     // testing methods (starter increment counters needs editting)
     [ContextMenu("IncrAirPol")]
