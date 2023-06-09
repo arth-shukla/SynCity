@@ -4,7 +4,7 @@
 
 Itch.io Deployment: https://arth-shukla.itch.io/syncity
 
-Figma: https://www.figma.com/file/6vf1RQZtqyibMr3NIFR15M/SYN-100---Farmville?type=design&node-id=2-2&t=o9EZn92d0mFvLnsD-0
+Figma: https://www.figma.com/file/6vf1RQZtqyibMr3NIFR15M/SYN-100---Farmville
 
 ## Technologies Used
 
