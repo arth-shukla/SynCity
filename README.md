@@ -28,12 +28,8 @@ Arth: I'd like to use my new Unity skills to build on my RL projects (e.g. [Mari
 
 ## About Me
 
-Arth Shukla [Site](https://arth.website) | [GitHub](https://github.com/arth-shukla) | [LinkedIn](https://www.linkedin.com/in/arth-shukla/)
-
-Tammy Ding
-
-Norberto Torres
-
-Soichi Hayashi
-
-Kruti Dharanipathi
+- Arth Shukla [Site](https://arth.website) | [GitHub](https://github.com/arth-shukla) | [LinkedIn](https://www.linkedin.com/in/arth-shukla/)
+- Tammy Ding
+- Norberto Torres
+- Soichi Hayashi
+- Kruti Dharanipathi
