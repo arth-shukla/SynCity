@@ -26,7 +26,7 @@ The game contains a non-linear descision path where their choices impact the env
 
 Arth: I'd like to use my new Unity skills to build on my RL projects (e.g. [Mario PPO Agent](https://github.com/arth-shukla/ppo-mario)) to make projects similar to [CodeBullet](https://www.youtube.com/@CodeBullet), a channel which I've been watching since I was little.
 
-## About Me
+## About Us
 
 - Arth Shukla [Site](https://arth.website) | [GitHub](https://github.com/arth-shukla) | [LinkedIn](https://www.linkedin.com/in/arth-shukla/)
 - Tammy Ding
