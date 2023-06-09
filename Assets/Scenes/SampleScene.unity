@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 701.52, y: 99.422}
+  m_AnchoredPosition: {x: 723, y: 81}
   m_SizeDelta: {x: 160, y: 52.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7969130
@@ -285,8 +285,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Here is a dialogue prompt
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2c98cc293494ec041b3d168ef1d072c4, type: 2}
-  m_sharedMaterial: {fileID: -2321920480965052148, guid: 2c98cc293494ec041b3d168ef1d072c4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c0423d494821654982299c28629543f, type: 2}
+  m_sharedMaterial: {fileID: 5546520030688534314, guid: 0c0423d494821654982299c28629543f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -377,7 +377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.57100004, y: 0.6006296}
   m_AnchorMax: {x: 0.85343754, y: 0.9704815}
-  m_AnchoredPosition: {x: 198, y: 137}
+  m_AnchoredPosition: {x: 135, y: 86.00001}
   m_SizeDelta: {x: 421.225, y: 216.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &83673687
@@ -406,7 +406,7 @@ RectTransform:
   m_GameObject: {fileID: 83673687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -9720}
-  m_LocalScale: {x: 120, y: 120, z: 1}
+  m_LocalScale: {x: 135, y: 135, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1130133385}
@@ -594,7 +594,7 @@ RectTransform:
   m_GameObject: {fileID: 221289309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -9720}
-  m_LocalScale: {x: 120, y: 120, z: 1}
+  m_LocalScale: {x: 135, y: 135, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1130133385}
@@ -950,7 +950,7 @@ RectTransform:
   m_GameObject: {fileID: 481419405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -9720}
-  m_LocalScale: {x: 120, y: 120, z: 1}
+  m_LocalScale: {x: 135, y: 135, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1130133385}
@@ -1569,7 +1569,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 190, y: 252}
+  m_AnchoredPosition: {x: 127, y: 201}
   m_SizeDelta: {x: 14.287, y: 9.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &841879950
@@ -1830,8 +1830,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Here is a regular dialogue for text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2c98cc293494ec041b3d168ef1d072c4, type: 2}
-  m_sharedMaterial: {fileID: -2321920480965052148, guid: 2c98cc293494ec041b3d168ef1d072c4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c0423d494821654982299c28629543f, type: 2}
+  m_sharedMaterial: {fileID: 5546520030688534314, guid: 0c0423d494821654982299c28629543f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2024,7 +2024,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 720, y: 427}
+  m_AnchoredPosition: {x: 657, y: 376}
   m_SizeDelta: {x: 454, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1130133384
@@ -2420,7 +2420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 720, y: 75}
+  m_AnchoredPosition: {x: 657, y: 24.000015}
   m_SizeDelta: {x: 454, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1379570122
@@ -2483,8 +2483,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2c98cc293494ec041b3d168ef1d072c4, type: 2}
-  m_sharedMaterial: {fileID: -2321920480965052148, guid: 2c98cc293494ec041b3d168ef1d072c4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c0423d494821654982299c28629543f, type: 2}
+  m_sharedMaterial: {fileID: 5546520030688534314, guid: 0c0423d494821654982299c28629543f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2677,7 +2677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 190, y: 403}
+  m_AnchoredPosition: {x: 127, y: 352}
   m_SizeDelta: {x: 512.69, y: 106.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1561511295
@@ -2702,8 +2702,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Here is the Title dialogue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2c98cc293494ec041b3d168ef1d072c4, type: 2}
-  m_sharedMaterial: {fileID: -2321920480965052148, guid: 2c98cc293494ec041b3d168ef1d072c4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c220bf88fcfa99943b06ed9cc9fe231f, type: 2}
+  m_sharedMaterial: {fileID: 3972703294339917346, guid: c220bf88fcfa99943b06ed9cc9fe231f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2921,8 +2921,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2c98cc293494ec041b3d168ef1d072c4, type: 2}
-  m_sharedMaterial: {fileID: -2321920480965052148, guid: 2c98cc293494ec041b3d168ef1d072c4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c0423d494821654982299c28629543f, type: 2}
+  m_sharedMaterial: {fileID: 5546520030688534314, guid: 0c0423d494821654982299c28629543f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3199,7 +3199,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 720, y: 250}
+  m_AnchoredPosition: {x: 657, y: 199.00002}
   m_SizeDelta: {x: 454, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1894045242
@@ -3330,8 +3330,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2c98cc293494ec041b3d168ef1d072c4, type: 2}
-  m_sharedMaterial: {fileID: -2321920480965052148, guid: 2c98cc293494ec041b3d168ef1d072c4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0c0423d494821654982299c28629543f, type: 2}
+  m_sharedMaterial: {fileID: 5546520030688534314, guid: 0c0423d494821654982299c28629543f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
