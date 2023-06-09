@@ -41,13 +41,13 @@ class EndingPrompt
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        if(c.sprite.choiceCounter <= 1){
+        if(c.sprite.choiceCounter <= 0){
             c.reg.InitChoices("Congratulations on making sustainable choices that have protected the environment " +
             "and created a thriving community in SynCity. Citizens are " +
             "excited to work with you on future endeavors. You can play again to see if you can build " +
             "an even more sustainable city.", NextAction);
         }
-        else if(c.sprite.choiceCounter == 2 ){
+        else if(c.sprite.choiceCounter == 1 ){
             c.reg.InitChoices("Your sustainable choices were good enough to maintain the current population and overall satisfaction of " +
             "SynCity. Citizens are feeling mediocre about you for another term ands the approval rate has " + 
             "decreased compared to your original rating. If you want a better outcome, try again! ", NextAction);
