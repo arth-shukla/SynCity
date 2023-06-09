@@ -144,12 +144,35 @@ public class SpriteLogic : MonoBehaviour
             choiceCounter = System.Math.Min(5, choiceCounter - 1);
         }
         else if(choiceState == 0){  // if make an ok choice
-            choiceCounter = choiceCounter;
+            // choiceCounter = choiceCounter;
         }
         else if(choiceState == 1){  // if make a bad choice
             choiceCounter = System.Math.Max(0, choiceCounter + 1);
         }
         
+    }
+
+    [ContextMenu("EndingCounter")]
+    public void ResetScene() {
+        airPollution = 0;       // sky counter
+        farmlandGrowth = 0;     // farm hill counter
+        energySource = 0;    // front hill counter (used only once during decision)
+        waterPollution = 0;   
+        AirPolChoice = 0;
+        waterDemand = 0;
+        waterEnergy = 0;
+        conserveEff = 0;
+        choiceState = 0;
+        choiceCounter = 0;   // counter for ending dialogue
+
+        UpdateSky();
+        UpdateFarmHill();
+        UpdateForestHill();
+        UpdateLake();
+        UpdateFrontHill();
+        UpdateTreatment();
+        UpdateWaterEnergy();
+        UpdateAirCount();
     }
 
     // ------------------------------------------------

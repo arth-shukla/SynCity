@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
 
+using UnityEngine.SceneManagement;
+
 public class GameController
 {
     public ChoiceController choice { get; private set; }
@@ -668,9 +670,11 @@ public class SequentialLogic : MonoBehaviour
 
     void TerminalAction()
     {
-        Debug.Log("Done Testing");
-
         c.DestroyAllPrompts();
+
+        c.sprite.ResetScene();
+
+        SceneManager.LoadScene(0);
     }
 
     // Start is called before the first frame update
