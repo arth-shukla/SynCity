@@ -32,13 +32,29 @@ public class SpriteLogic : MonoBehaviour
     public GameObject WasteIncin;
     public GameObject Factory;
     public GameObject Park;
+    public GameObject BadCrops;
+    public GameObject GoodCrops;
 
 
     [ContextMenu("UpdateSky")]
     public void UpdateSky() { Sky.GetComponent<SpriteChanger>().ChangeSprite((int)(airPollution)); }    // was airPollution / 2, (using current for testing counter)
 
     [ContextMenu("UpdateFarmHill")]
-    public void UpdateFarmHill() { FarmHill.GetComponent<SpriteChanger>().ChangeSprite((int)(farmlandGrowth / 2)); }
+    public void UpdateFarmHill() { 
+        if(farmlandGrowth == 0){ // initial hill
+            FarmHill.SetActive(true);
+            BadCrops.SetActive(false);
+            GoodCrops.SetActive(false);
+        }
+        else if(farmlandGrowth == 1){   // add good crops
+            FarmHill.SetActive(false);
+            GoodCrops.SetActive(true);
+        }
+        else if(farmlandGrowth == 2){   // add bad crops
+            FarmHill.SetActive(false);
+            BadCrops.SetActive(true);
+        }
+    }
 
     [ContextMenu("UpdateForestHill")]
     public void UpdateForestHill() { 

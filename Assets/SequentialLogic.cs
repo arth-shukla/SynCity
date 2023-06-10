@@ -577,7 +577,7 @@ class TestDescision1 //Farming
     {
         c.DestroyAllPrompts();
         c.sprite.choiceState = -1;
-        c.sprite.farmlandGrowth = 4;    // for testing purposes
+        c.sprite.farmlandGrowth = 1;    // for testing purposes
         c.sprite.UpdateFarmHill();
         c.sprite.EndingCounter();
         NextChoice1();
