@@ -43,18 +43,18 @@ class EndingPrompt
         c.DestroyAllPrompts();
         if(c.sprite.choiceCounter <= 0){
             c.reg.InitChoices("Congratulations on making sustainable choices that have protected the environment " +
-            "and created a thriving community in Farmville. Citizens are " +
+            "and created a thriving community in SynCity. Citizens are " +
             "excited to work with you on future endeavors. You can play again to see if you can build " +
             "an even more sustainable city.", NextAction);
         }
         else if(c.sprite.choiceCounter == 1 ){
             c.reg.InitChoices("Your sustainable choices were good enough to maintain the current population and overall satisfaction of " +
-            "Farmville. Citizens are feeling mediocre about you for another term ands the approval rate has " + 
+            "SynCity. Citizens are feeling mediocre about you for another term ands the approval rate has " + 
             "decreased compared to your original rating. If you want a better outcome, try again! ", NextAction);
         }
-        else if(c.sprite.choiceCounter >= 2){
-            c.reg.InitChoices("Unfortunately, Farmville have been reduced by half since you came to office." +
-            "You have scared everyone away, and your satisfaction rates have been decreasing ever since. You were not able to keep the mayor’s seat as the citizens of Farmville were furious. Try Again! ", NextAction);
+        else if(c.sprite.choiceCounter >= 3){
+            c.reg.InitChoices("Unfortunately, SynCity have been reduced by half since you came to office." +
+            "You have scared everyone away, and your satisfaction rates have been decreasing ever since. You were not able to keep the mayor’s seat as the citizens of SynCity were furious. Try Again! ", NextAction);
         }
             
     }
@@ -172,7 +172,7 @@ class TestDescision5 //Green Infrastructure/Conservation Efforts
     { return "Decision 5: Conservation Efforts"; }
 
     string GetPrompt()
-    { return "The citizens of Farmville are educated about climate change and want to make the city greener and " +
+    { return "The citizens of SynCity are educated about climate change and want to make the city greener and " +
         "even more sustainable. What will you do with the forest on the left hill? "; }
 
     string[] GetChoiceStrs()
@@ -273,7 +273,7 @@ class TestDescision4 // Water Energy
         return "Decision 4: Water Energy Sources"; }
 
     string GetPrompt()
-    { return "The population of Farmville keeps growing! The government is offering a generous grant to " +
+    { return "The population of SynCity keeps growing! The government is offering a generous grant to " +
     "help you invest in an energy source. How will you invest in the city? "; }
 
     string[] GetChoiceStrs()
@@ -408,10 +408,10 @@ class TestDescision3 // Water Demand
     { return "Decision 3: Water Demand"; }
 
     string GetPrompt()
-    { return "OH NO! Farmville has had an insane drought due to global warming and now citizens have less access to clean water. What will you do?"; }
+    { return "OH NO! SynCity has had an insane drought due to global warming and now citizens have less access to clean water. What will you do?"; }
 
     string[] GetChoiceStrs()
-    { return new string[] { "Building a new water treatment plant ", "Expanding the water supply infrastructure within Farmville", "Boiler efficiency improvement" }; }
+    { return new string[] { "Building a new water treatment plant ", "Expanding the water supply infrastructure within SynCity", "Boiler efficiency improvement" }; }
 
     UnityAction[] GetActions()
     { return new UnityAction[] { GoodChoice, OkChoice, BadChoice }; }
@@ -437,7 +437,7 @@ class Descision2Good
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("Great choice to keep Farmville environmentally friendly. Oil " +
+        c.reg.InitChoices("Great choice to keep SynCity environmentally friendly. Oil " +
             "will eventually run out within decades, and investing in green energy creates a sustainable future!", NextAction, 1);
     }
 }
@@ -507,11 +507,11 @@ class TestDescision2 //Investing
 
     string GetPrompt()
     { return "Corporate executive John McJohnson has approached you with the opportunity " +
-        "to construct an oil/coal plant in Farmville for a generous amount of money. What will you do?"; }
+        "to construct an oil/coal plant in SynCity for a generous amount of money. What will you do?"; }
 
     string[] GetChoiceStrs()
     { return new string[] { "Reject his request and instead invest in green energy using government grants.", "Open a coal/oil plant, " +
-    "as John offered to invest in Farmville " }; }
+    "as John offered to invest in SynCity " }; }
 
     UnityAction[] GetActions()
     { return new UnityAction[] { GoodChoice, BadChoice }; }
@@ -600,7 +600,7 @@ class TestDescision1 //Farming
     { return "Decision 1: Farming"; }
 
     string GetPrompt()
-    { return " The residents of Farmville are hungry and demand food. How will you start off your farming adventure?"; }
+    { return " The residents of SynCity are hungry and demand food. How will you start off your farming adventure?"; }
 
     string[] GetChoiceStrs()
     { return new string[] { "Reduce food waste and compost to increase crop production", "Increase farming production using more fertilizers" }; }
@@ -628,7 +628,7 @@ class StartingPrompt
     public void InitChoices()
     {
         c.DestroyAllPrompts();
-        c.reg.InitChoices("Welcome to Farmville!" , NextAction);
+        c.reg.InitChoices("Welcome to SynCity!" , NextAction);
     }
 }
 
